@@ -169,7 +169,7 @@ jobs:
         platform:
           - target: x64
             os: windows-latest
-            interpreter: 3.9 3.10 3.11 3.12 3.13 pypy3.9 pypy3.10
+            interpreter: 3.9 3.10 3.11 3.12 3.13
           - target: x86
             os: windows-latest
             interpreter: 3.9 3.10 3.11 3.12
