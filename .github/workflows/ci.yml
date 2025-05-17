@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - trim21-patch-1
     tags:
       - "*"
   pull_request:
