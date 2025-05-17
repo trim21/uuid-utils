@@ -167,22 +167,28 @@ jobs:
 
   windows:
     name: "Windows: ${{ matrix.platform.target }}"
-    runs-on: "${{ matrix.platform.os }}"
+    runs-on: '${{ matrix.platform.os }}'
     strategy:
       matrix:
         platform:
           - target: x64
             os: windows-latest
-            interpreter: 3.9 3.10 3.11 3.12 3.13
+            py_arch: 'x64'
+            interpreter: '3.13'
           - target: x86
+            py_arch: 'x86'
             os: windows-latest
-            interpreter: 3.9 3.10 3.11 3.12
+            interpreter: '3.12'
+          - target: aarch64
+            py_arch: 'arm64'
+            os: windows-11-arm
+            interpreter: '3.13'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-          architecture: ${{ matrix.platform.target }}
+          python-version: "3.13"
+          architecture: ${{ matrix.platform.py_arch }}
       - uses: dtolnay/rust-toolchain@stable
       - name: Build wheels
         uses: PyO3/maturin-action@v1
