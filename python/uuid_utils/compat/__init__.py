@@ -13,6 +13,9 @@ from uuid import (
 
 import uuid_utils
 
+NIL: UUID = UUID(int=0)
+MAX: UUID = UUID("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF")
+
 __all__ = [
     "NAMESPACE_DNS",
     "NAMESPACE_OID",
@@ -31,6 +34,8 @@ __all__ = [
     "uuid6",
     "uuid7",
     "uuid8",
+    "NIL",
+    "MAX",
 ]
 
 

@@ -134,6 +134,7 @@ if sys.version_info >= (3, 12):
     def uuid3(namespace: UUID, name: str | bytes) -> UUID:
         """Generate a UUID from the MD5 hash of a namespace UUID and a name."""
         ...
+
 else:
     def uuid3(namespace: UUID, name: str) -> UUID:
         """Generate a UUID from the MD5 hash of a namespace UUID and a name."""
@@ -147,6 +148,7 @@ if sys.version_info >= (3, 12):
     def uuid5(namespace: UUID, name: str | bytes) -> UUID:
         """Generate a UUID from the SHA-1 hash of a namespace UUID and a name."""
         ...
+
 else:
     def uuid5(namespace: UUID, name: str) -> UUID:
         """Generate a UUID from the SHA-1 hash of a namespace UUID and a name."""
@@ -177,6 +179,8 @@ RESERVED_NCS: str
 RFC_4122: str
 RESERVED_MICROSOFT: str
 RESERVED_FUTURE: str
+NIL: UUID
+MAX: UUID
 
 __all__ = [
     "NAMESPACE_DNS",
@@ -198,4 +202,6 @@ __all__ = [
     "uuid6",
     "uuid7",
     "uuid8",
+    "NIL",
+    "MAX",
 ]

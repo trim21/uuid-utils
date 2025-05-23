@@ -478,5 +478,10 @@ fn _uuid_utils(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add("RFC_4122", RFC_4122)?;
     m.add("RESERVED_MICROSOFT", RESERVED_MICROSOFT)?;
     m.add("RESERVED_FUTURE", RESERVED_FUTURE)?;
+    m.add("NIL", UUID::from_int(0)?)?;
+    m.add(
+        "MAX",
+        UUID::from_hex("FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF")?,
+    )?;
     Ok(())
 }
